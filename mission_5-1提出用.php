@@ -29,15 +29,7 @@ $sql = "CREATE TABLE IF NOT EXISTS mission5"
 $stmt = $pdo->query($sql);
 //テーブル作成　終わり
 
-//テーブル中身確認
-$sql ='SHOW CREATE TABLE mission5';
-$result = $pdo -> query($sql);
-foreach ($result as $row){
-    echo $row[1];
-}
-echo "<hr>";
-//テーブル中身確認　終わり
-
+	
 //変数の初期化
 $henshu_No = "0";
 $henshu_Name = "";
@@ -130,7 +122,7 @@ if(empty($_POST["deleteNo"] )){//削除番号書き込みなし
 	名前：<textarea name="name"><?php echo $henshu_Name;?></textarea><br>
 	コメント：<textarea name="comment"><?php echo $henshu_Com;?></textarea><br>
 	パスワード：<input type="password" name="pass1"><br>
-	<input type= "text" name="edit" value="<?php echo $henshu_No;?>"><br>
+	<input type= "hidden" name="edit" value="<?php echo $henshu_No;?>"><br>
 	<input type="submit" value="送信"><br>
 </p>
 <!--削除フォーム-->
